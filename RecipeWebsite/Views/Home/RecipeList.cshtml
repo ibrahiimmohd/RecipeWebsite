@@ -1,0 +1,28 @@
+﻿@model IEnumerable<RecipeWebsite.Models.Recipe>
+
+@{
+    ViewBag.Title = "Recipe List";
+}
+
+
+
+<fieldset id="hyperlink">
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="text-center" scope="col"><h2>Recipies</h2></th>
+            </tr>
+        </thead>
+    </table>
+
+    <ul class="text-center">
+        @foreach (RecipeWebsite.Models.Recipe r in Model)
+        {
+            <li>
+                <a asp-action="ViewRecipe" asp-route-id="@r.ID">@r.RecipeName</a>
+            </li>
+        }
+    </ul>
+</fieldset><br>
+

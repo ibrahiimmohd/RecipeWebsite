@@ -1,0 +1,31 @@
+﻿@model RecipeWebsite.Models.Recipe
+
+@{
+    ViewBag.Title = "View Recipe";
+}
+
+<form asp-action="ViewRecipe" method="Post">
+    <fieldset class="text-center">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-center" scope="col"><h2>Recipie Name</h2></th>
+                    <th class="text-center" scope="col"><h2>Recipie Description</h2></th>
+                    <th class="text-center" scope="col"><h2>Recipie Ingredient</h2></th>
+                    <th class="text-center" scope="col"><h2>Recipie Method</h2></th>
+                    <th class="text-center" scope="col"><h2>Recipie Preparation Time</h2></th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                    <tr>
+                        <td>@Model.RecipeName</td>
+                        <td>@Model.RecipeDescription</td>
+                        <td>@Model.RecipeIngredient</td>
+                        <td>@Model.RecipeMethod</td>
+                        <td>@Model.RecipePreparationTime</td>
+                    </tr>              
+            </tbody>
+        </table>
+        <button asp-action="ReviewRecipe" class="btn btn-primary">Review Recipe</button><br><br>
+    </fieldset>
+</form><br>

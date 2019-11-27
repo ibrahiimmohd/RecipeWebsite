@@ -1,0 +1,17 @@
+﻿@model RecipeWebsite.Models.Recipe
+
+@{
+    ViewBag.Title = "Add Recipe";
+}
+
+<div class="panel-body">
+    <form class="p-a-1" asp-action="AddRecipe" method="Post">
+        @await Html.PartialAsync("AddRecipeSummary")
+
+        <div class="text-center">
+            <button class="btn btn-primary" type="submit">Save</button> |  <button asp-action="Index" class="btn btn-primary">Cencel</button>
+        </div><br>
+    </form>
+</div>
+
+

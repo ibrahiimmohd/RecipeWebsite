@@ -1,0 +1,26 @@
+﻿@model RecipeWebsite.Models.Recipe
+
+
+<div asp-validation-summary="All"></div>
+<div class="form-group">
+    <label asp-for="RecipeName">Recipe Name:</label>
+    <input class="form-control" asp-for="RecipeName" />
+</div>
+<div class="form-group">
+    <label asp-for="RecipeDescription">Recipe Description:</label>
+    <textarea class="form-control" cols="20" name="RecipeDescription" rows="2"></textarea>
+</div>
+<div class="form-group">
+    <label asp-for="RecipeIngredient">Recipe Ingredients:</label>
+    <textarea  class="form-control" cols="20" name="RecipeIngredient" rows="2"></textarea>
+</div>
+<div class="form-group">
+    <label asp-for="RecipeMethod">Recipe Method:</label>
+    <textarea class="form-control" cols="20" name="RecipeMethod" rows="2"></textarea>
+</div>
+<div class="form-group">
+    <label asp-for="RecipePreparationTime">Recipe Preparation Time:</label>
+    <textarea class="form-control" cols="20" name="RecipePreparationTime" rows="2"></textarea>
+</div>
+<br>
+

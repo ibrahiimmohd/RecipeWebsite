@@ -1,0 +1,20 @@
+﻿@model RecipeWebsite.Models.ReviewAddition
+
+@{
+    ViewBag.Title = "Review Recipe";
+}
+
+<div class="panel-body">
+    <form class="p-a-1" asp-action="ReviewRecipe" method="Post">
+        <br>
+        <div asp-validation-summary="All"></div>
+        <div class="form-group">
+            <label asp-for="RecipeReviewDetails">Provide Review:</label>
+            <textarea class="form-control" cols="20" name="RecipeReviewDetails" rows="3"></textarea>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div><br>
+    </form>
+</div>
+

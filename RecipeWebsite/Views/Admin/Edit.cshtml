@@ -1,0 +1,45 @@
+﻿@model RecipeWebsite.Models.Recipe
+
+@{
+    ViewBag.Title = "Edit Recipe";
+    Layout = "_AdminLayout";
+}
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="ID" />
+
+    <div class="form-group">
+        <label asp-for="RecipeName"></label>
+        <div><span asp-validation-for="RecipeName" class="text-danger"></span></div>
+        <input asp-for="RecipeName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="RecipeDescription"></label>
+        <div><span asp-validation-for="RecipeDescription" class="text-danger"></span></div>
+        <textarea asp-for="RecipeDescription" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="RecipeIngredient"></label>
+        <div><span asp-validation-for="RecipeIngredient" class="text-danger"></span></div>
+        <textarea asp-for="RecipeIngredient" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="RecipeMethod"></label>
+        <div><span asp-validation-for="RecipeMethod" class="text-danger"></span></div>
+        <textarea asp-for="RecipeMethod" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="RecipePreparationTime"></label>
+        <div><span asp-validation-for="RecipePreparationTime" class="text-danger"></span></div>
+        <textarea asp-for="RecipePreparationTime" class="form-control"></textarea>
+    </div>
+
+    <div class="text-center">
+        <button class="btn btn-primary" type="submit">Save</button>
+        <button class="btn btn-primary" asp-action="Index" >Cancel</button>
+    </div>
+</form><br />

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/Styles.css" />
+</head>
+<body>
+    <div id="allPage">
+        <header class="text-center">
+            <img alt="Fresh logo" height="150" src="~/images/freshImage.gif" width="300">
+        </header>
+        <form>
+            <fieldset>
+                <div id="hyperlink">
+                    <p class="text-center">
+                        <a asp-action="Index">Home</a> |
+                        <a asp-action="RecipeList">Recipe List</a> <!--|
+                        <a asp-action="AddRecipe">Add Recipe</a>-->
+                    </p>
+                </div>
+            </fieldset><br>
+        </form><br>
+        <div>
+            @RenderBody()
+        </div>
+        <footer>
+            <p id="copyright">&copy; Copyright Ibrahim Ali - COMP229 - Web Application Develoment - Assignment 3</p>
+        </footer>
+    </div>
+</body>
+</html>

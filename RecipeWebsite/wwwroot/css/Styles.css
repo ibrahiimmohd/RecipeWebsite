@@ -1,0 +1,68 @@
+﻿body {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    color: #707000;
+    background-repeat: repeat;
+    background-color: #E5F5CC;
+    font-weight: bold;
+}
+
+#copyright {
+    font-size: small;
+    color: white;
+    font-weight: bold;
+}
+
+#hyperlink {
+    background-repeat: repeat;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+footer {
+    background-color: #707000;
+    padding: 4px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px gray;
+    text-align: center;
+}
+
+#allPage {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px gray;
+    border: thin solid #707000;
+    padding: 15px;
+}
+
+h2 {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    font-size: x-large;
+    font-variant: small-caps;
+    text-transform: capitalize;
+    color: darkred;
+    font-weight: bold;
+}
+
+fieldset {
+    border-radius: 10px;
+    border: thin solid #707000;
+    box-shadow: 5px 5px 5px grey;
+    margin-bottom: auto;
+}
+
+#hyperlink a {
+    text-decoration: none;
+    color: darkred;
+    padding-right: 2px;
+    padding-left: 2px;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+#hyperlink a:hover {
+    color: #707000;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
