@@ -10,7 +10,7 @@ namespace RecipeWebsite.Models
 {
     public static class IdentitySeedData
     {
-        private const string adminUser = "ibrahim";
+        private const string adminUser = "admin";
         private const string adminPassword = "Secret123$";
 
         private const string managerUser = "Paul";
