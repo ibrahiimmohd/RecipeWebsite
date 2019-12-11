@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RecipeWebsite.Migrations
 {
-    public partial class newDb : Migration
+    public partial class NewDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,7 +11,7 @@ namespace RecipeWebsite.Migrations
                 name: "Products",
                 columns: table => new
                 {
-                    id = table.Column<int>(nullable: false)
+                    ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     RecipeName = table.Column<string>(nullable: false),
                     RecipeIngredient = table.Column<string>(nullable: false),
@@ -21,7 +21,22 @@ namespace RecipeWebsite.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Products", x => x.id);
+                    table.PrimaryKey("PK_Products", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Reviews",
+                columns: table => new
+                {
+                    ReviewId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    RecipeId = table.Column<int>(nullable: false),
+                    Description = table.Column<string>(nullable: true),
+                    Rating = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Reviews", x => x.ReviewId);
                 });
         }
 
@@ -29,6 +44,9 @@ namespace RecipeWebsite.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Products");
+
+            migrationBuilder.DropTable(
+                name: "Reviews");
         }
     }
 }

@@ -8,9 +8,10 @@ namespace RecipeWebsite.Models
 {  
     public class Recipe
     {
+        [Key]
         public int ID { get; set; }
         [Required(ErrorMessage = "Please enter recipe's name")]
-        public string RecipeName { get; set; }
+        public String RecipeName { get; set; }
         [Required(ErrorMessage = "Please enter recipe's ingredient")]
         public string RecipeIngredient { get; set; }
         [Required(ErrorMessage = "Please enter recipe's method")]

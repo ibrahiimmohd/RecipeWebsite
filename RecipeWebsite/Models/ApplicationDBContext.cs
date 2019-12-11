@@ -13,5 +13,6 @@ namespace RecipeWebsite.Models
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
         public DbSet<Recipe> Products { get; set; }
+        public DbSet<Review> Reviews { get; set; }
     }
 }

@@ -8,9 +8,14 @@ namespace RecipeWebsite.Models
     public interface IRecipeRepository
     {
         IQueryable<Recipe> Recipes { get; }
+        IQueryable<Review> Reviews { get; }
+
 
         void SaveRecipe(Recipe recipe);
 
-        Recipe DeleteProduct(int recipeID);
+        void SaveReview(Review review);
+
+
+        Recipe DeleteRecipe(int recipeID);
     }
 }

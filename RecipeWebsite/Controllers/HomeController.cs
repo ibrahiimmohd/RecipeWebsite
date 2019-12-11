@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using RecipeWebsite.Models;
+using RecipeWebsite.Models.ViewModels;
+
 
 
 namespace RecipeWebsite.Controllers
@@ -43,16 +45,49 @@ namespace RecipeWebsite.Controllers
         public ViewResult RecipeList()
         {
             return View(repository.Recipes);
-            
+
         }
         public ViewResult ReviewRecipe()
         {
             return View();
         }
-        
+
         public ViewResult ViewRecipe(int id)
         {
-            return View(repository.Recipes.Single(r=>r.ID == id));
+            return View(repository.Recipes.Where(r => r.ID == id));
+        }
+
+
+
+
+
+        [HttpGet]
+        public ViewResult ReviewRecipe(int RecipeId)
+        {
+            if (RecipeId != null)
+            {
+                return View("ReviewRecipe", new Review());
+            }
+            else
+            {
+                return View();
+            }
+        }
+        [HttpPost]
+        public IActionResult ReviewRecipe(Review review)
+        {
+            repository.SaveReview(review);
+            return RedirectToAction("ReadReview", new { review.RecipeId });
+        }
+        [HttpGet]
+        public ViewResult ReadReview(int RecipeId)
+        {
+            return View(new RecipeReviewsViewModel
+            {
+                Recipe = repository.Recipes.FirstOrDefault(r => r.ID == RecipeId),
+                Reviews = repository.Reviews.Where(r => r.RecipeId == RecipeId)
+            }
+                );
         }
     }
 }

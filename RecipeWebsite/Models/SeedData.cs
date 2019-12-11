@@ -36,6 +36,15 @@ namespace RecipeWebsite.Models
                         RecipePreparationTime = 40
                     }
                 );
+                if (!context.Reviews.Any())
+                {
+                    new Review
+                    {
+                        RecipeId = 1,
+                        Rating = 5,
+                        Description = "Great"
+                    };
+                }
                 context.SaveChanges();
             }
         }

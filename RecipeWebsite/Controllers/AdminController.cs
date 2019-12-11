@@ -46,7 +46,7 @@ namespace RecipeWebsite.Controllers
         [HttpPost]
         public IActionResult Delete(int recipeId)
         {
-            Recipe deletedProduct = repository.DeleteProduct(recipeId);
+            Recipe deletedProduct = repository.DeleteRecipe(recipeId);
 
             if (deletedProduct != null)
             {

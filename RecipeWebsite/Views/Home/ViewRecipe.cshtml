@@ -1,10 +1,11 @@
-﻿@model RecipeWebsite.Models.Recipe
+﻿@model IEnumerable<RecipeWebsite.Models.Recipe>
 
 @{
     ViewBag.Title = "View Recipe";
 }
 
-<form asp-action="ViewRecipe" method="Post">
+@foreach (var r in Model)
+{
     <fieldset class="text-center">
         <table class="table">
             <thead>
@@ -17,15 +18,17 @@
                 </tr>
             </thead>
             <tbody class="text-center">
-                    <tr>
-                        <td>@Model.RecipeName</td>
-                        <td>@Model.RecipeDescription</td>
-                        <td>@Model.RecipeIngredient</td>
-                        <td>@Model.RecipeMethod</td>
-                        <td>@Model.RecipePreparationTime</td>
-                    </tr>              
+                <tr>
+                    <td>@r.RecipeName</td>
+                    <td>@r.RecipeDescription</td>
+                    <td>@r.RecipeIngredient</td>
+                    <td>@r.RecipeMethod</td>
+                    <td>@r.RecipePreparationTime</td>
+                </tr>
             </tbody>
         </table>
-        <button asp-action="ReviewRecipe" class="btn btn-primary">Review Recipe</button><br><br>
+
+        <a class="btn btn-primary" asp-action="ReviewRecipe" asp-route-RecipeId="@r.ID">Review this recipe</a>
+        <a class="btn btn-primary" asp-action="ReadReview" asp-route-RecipeId="@r.ID">Read Reviews</a><br><br>
     </fieldset>
-</form><br>
+}

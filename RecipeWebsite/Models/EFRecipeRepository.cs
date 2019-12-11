@@ -15,6 +15,8 @@ namespace RecipeWebsite.Models
         }
 
         public IQueryable<Recipe> Recipes => context.Products;
+        public IQueryable<Review> Reviews => context.Reviews;
+
 
         public void SaveRecipe(Recipe recipe)
         {
@@ -40,7 +42,7 @@ namespace RecipeWebsite.Models
             context.SaveChanges();
         }
 
-        public Recipe DeleteProduct(int recipeID)
+        public Recipe DeleteRecipe(int recipeID)
         {
             Recipe recipeEntry = context.Products
                 .FirstOrDefault(p => p.ID == recipeID);
@@ -52,6 +54,15 @@ namespace RecipeWebsite.Models
             }
 
             return recipeEntry;
+        }
+
+        public void SaveReview(Review review)
+        {
+            if (review.ReviewId == 0)
+            {
+                context.Reviews.Add(review);
+            }
+            context.SaveChanges();
         }
     }
 }
